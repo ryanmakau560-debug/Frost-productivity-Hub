@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Frost - Contact Us</title>
+
+<!-- Premium Font -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: url('https://images.unsplash.com/photo-1519681393784-d120267933ba') no-repeat center/cover;
+  color: white;
+}
+body::before {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(8px);
+  z-index: -1;
+}
+
+/* TOP BAR */
+.top-bar {
+  position: sticky;
+  top: 0;
+  padding-top: 10px;
+  z-index: 10;
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(12px);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 20px;
+  padding: 15px 30px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(15px);
+  border-radius: 14px;
+}
+
+nav a { color: #ccc; margin-left: 20px; text-decoration: none; transition: 0.3s; }
+nav a:visited { color: #ccc; }
+nav a:hover { color: white; }
+
+/* HERO */
+.hero {
+  text-align: center;
+  margin-top: 60px;
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 80px;
+  letter-spacing: 5px;
+  margin: 0;
+}
+.hero p { margin-top: 10px; color: #ccc; letter-spacing: 2px; }
+
+/* CONTENT FORM */
+.content {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.glass {
+  background: rgba(255,255,255,0.05);
+  padding: 25px;
+  border-radius: 15px;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.glass input,
+.glass textarea,
+.glass button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  margin: 10px 0;
+  outline: none;
+  background: rgba(255,255,255,0.05);
+  color: white;
+  font-size: 16px;
+  backdrop-filter: blur(15px);
+}
+
+.glass input::placeholder,
+.glass textarea::placeholder {
+  color: #ccc;
+}
+
+.glass textarea { resize: vertical; min-height: 100px; }
+
+.glass button {
+  background: rgba(255,255,255,0.1);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.glass button:hover { background: rgba(255,255,255,0.2); }
+
+/* FOOTER */
+footer {
+  text-align: center;
+  margin: 30px 20px;
+  padding: 20px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+}
+footer h2 { font-family: 'Playfair Display', serif; margin: 0; letter-spacing: 3px; }
+footer p { margin: 5px 0; color: #ccc; font-size: 14px; }
+
+/* --------------------- */
+/* Responsive for phones  */
+/* --------------------- */
+@media screen and (max-width: 768px) {
+  .hero h1 { font-size: 50px; letter-spacing: 3px; }
+  .hero p { font-size: 14px; }
+  .glass { padding: 15px; }
+  .glass input,
+  .glass textarea,
+  .glass button { font-size: 14px; }
+  footer h2 { font-size: 20px; }
+  footer p { font-size: 12px; }
+}
+
+@media screen and (max-width: 480px) {
+  .hero h1 { font-size: 40px; }
+  .hero p { font-size: 12px; }
+  .glass { padding: 10px; }
+  .glass input,
+  .glass textarea,
+  .glass button { font-size: 12px; }
+}
+</style>
+</head>
+
+<body>
+
+<header class="top-bar">
+  <nav>
+    <div>FROST</div>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="tasks.html">Tasks</a>
+      <a href="focus.html">Focus</a>
+      <a href="stats.html">Stats</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+  </nav>
+</header>
+
+<div class="hero">
+  <h1>CONTACT US</h1>
+  <p>Have questions or feedback? Reach out to us!</p>
+</div>
+
+<div class="content">
+  <div class="glass">
+    <h3>Send Us a Message</h3>
+    <input type="text" placeholder="Your Name" id="contactName">
+    <input type="email" placeholder="Your Email" id="contactEmail">
+    <textarea placeholder="Your Message" id="contactMessage"></textarea>
+    <button onclick="alert('Thank you! Your message has been recorded.')">Send Message</button>
+  </div>
+</div>
+
+<footer>
+  <h2>FROST</h2>
+  <p>STUDY PRODUCTIVITY HUB</p>
+  <p>All rights reserved @2026</p>
+</footer>
+
+</body>
+</html>

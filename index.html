@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Frost</title>
+
+<!-- Premium Font -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+  title {
+    font-family: 'Playfair Display', serif;
+  }
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: url('https://images.unsplash.com/photo-1519681393784-d120267933ba') no-repeat center/cover;
+  color: white;
+}
+body::before {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(8px);
+  z-index: -1;
+}
+
+/* TOP BAR */
+.top-bar {
+  position: sticky;
+  top: 0;
+  padding-top: 10px;
+  z-index: 10;
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(12px);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 20px;
+  padding: 15px 30px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(15px);
+  border-radius: 14px;
+}
+
+nav a { color: #ccc; margin-left: 20px; text-decoration: none; transition: 0.3s; }
+nav a:visited { color: #ccc; }
+nav a:hover { color: white; }
+
+/* HERO */
+.hero {
+  text-align: center;
+  margin-top: 60px;
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 80px;
+  letter-spacing: 5px;
+  margin: 0;
+}
+.hero p { margin-top: 10px; color: #ccc; letter-spacing: 2px; }
+
+/* GLASS INPUT */
+.glass-input {
+  max-width: 300px;
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 15px;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.glass-input input {
+  width: 90%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  margin-top: 10px;
+  outline: none;
+  background: rgba(255,255,255,0.05);
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  backdrop-filter: blur(15px);
+}
+.glass-input input::placeholder { color: #ccc; text-align: center; }
+
+.glass-input button {
+  width: 90%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.glass-input button:hover { background: rgba(255,255,255,0.2); }
+
+/* GRID */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.glass {
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 15px;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  margin: 30px 20px;
+  padding: 20px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+}
+footer h2 { font-family: 'Playfair Display', serif; margin: 0; letter-spacing: 3px; }
+footer p { margin: 5px 0; color: #ccc; font-size: 14px; }
+
+/* --------------------- */
+/* Responsive for phones  */
+/* --------------------- */
+@media screen and (max-width: 768px) {
+  .hero h1 { font-size: 50px; letter-spacing: 3px; }
+  .hero p { font-size: 14px; }
+  .glass-input { max-width: 90%; padding: 15px; }
+  .glass-input input,
+  .glass-input button { width: 100%; margin: 5px 0; }
+  .container { grid-template-columns: 1fr; gap: 15px; padding: 15px; }
+  .glass { padding: 15px; }
+  footer h2 { font-size: 20px; }
+  footer p { font-size: 12px; }
+}
+
+@media screen and (max-width: 480px) {
+  .hero h1 { font-size: 40px; }
+  .hero p { font-size: 12px; }
+  .glass-input { padding: 10px; }
+  .glass { padding: 10px; }
+}
+</style>
+</head>
+
+<body>
+
+<header class="top-bar">
+  <nav>
+    <div>FROST</div>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="tasks.html">Tasks</a>
+      <a href="focus.html">Focus</a>
+      <a href="stats.html">Stats</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+  </nav>
+</header>
+
+<div class="hero">
+  <h1>FROST</h1>
+  <p>STUDY PRODUCTIVITY HUB</p>
+  <p>EST 2026</p>
+</div>
+
+<!-- NAME INPUT -->
+<div class="glass-input">
+  <h3>Set Your Name</h3>
+  <input id="nameInput" type="text" placeholder="Enter your name">
+  <button onclick="saveName()">Save</button>
+</div>
+
+<!-- DASHBOARD -->
+<div class="container">
+  <div class="glass">
+    <h3>Date</h3>
+    <p id="date"></p>
+  </div>
+  
+  <div class="glass">
+    <h3>Tasks Completed</h3>
+    <p id="tasksCompleted"></p>
+  </div>
+  
+  <div class="glass">
+    <h3>Focus Sessions</h3>
+    <p id="sessions"></p>
+  </div>
+
+  <!-- NEW ABOUT US CARD -->
+  <div class="glass">
+    <h3>About Us</h3>
+    <p>Learn why a productivity tracker is essential.</p>
+    <a href="about.html" style="
+        display:inline-block;
+        margin-top:10px;
+        padding:8px 12px;
+        border-radius:8px;
+        background: rgba(255,255,255,0.1);
+        color: white;
+        text-decoration: none;
+        transition: 0.3s;
+    ">Go to About Us</a>
+  </div>
+
+  <!-- NEW CONTACT US CARD -->
+  <div class="glass">
+    <h3>Contact Us</h3>
+    <p>Get in touch with our team for support or feedback.</p>
+    <a href="contact.html" style="
+        display:inline-block;
+        margin-top:10px;
+        padding:8px 12px;
+        border-radius:8px;
+        background: rgba(255,255,255,0.1);
+        color: white;
+        text-decoration: none;
+        transition: 0.3s;
+    ">Go to Contact Us</a>
+  </div>
+</div>
+
+<footer>
+  <h2>FROST</h2>
+  <p>STUDY PRODUCTIVITY HUB</p>
+  <p>All rights reserved @2026</p>
+  <p>Frost1@gmail.com</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

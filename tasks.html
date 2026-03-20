@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Frost - Tasks</title>
+
+<!-- Premium Font -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: url('https://images.unsplash.com/photo-1519681393784-d120267933ba') no-repeat center/cover;
+  color: white;
+}
+body::before {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(8px);
+  z-index: -1;
+}
+
+/* TOP BAR */
+.top-bar {
+  position: sticky;
+  top: 0;
+  padding-top: 10px;
+  z-index: 10;
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(12px);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 20px;
+  padding: 15px 30px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(15px);
+  border-radius: 14px;
+}
+
+nav a { color: #ccc; margin-left: 20px; text-decoration: none; transition: 0.3s; }
+nav a:visited { color: #ccc; }
+nav a:hover { color: white; }
+
+/* HERO */
+.hero {
+  text-align: center;
+  margin-top: 60px;
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 80px;
+  letter-spacing: 5px;
+  margin: 0;
+}
+.hero p { margin-top: 10px; color: #ccc; letter-spacing: 2px; }
+
+/* GLASS CARD */
+.glass {
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 15px;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255,255,255,0.1);
+  text-align: center;
+  max-width: 400px;
+  margin: 20px auto;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.glass:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+/* INPUTS + BUTTONS */
+input[type="text"], input[type="date"] {
+  width: 90%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  margin-top: 10px;
+  background: rgba(255,255,255,0.05);
+  color: white;
+  text-align: center;
+  backdrop-filter: blur(15px);
+}
+
+input[type="text"]::placeholder,
+input[type="date"]::placeholder { color: #ccc; text-align: center; }
+
+button.add-task {
+  width: 90%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button.add-task:hover { background: rgba(255,255,255,0.2); }
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 10px 0;
+  padding: 10px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+}
+
+/* TASK DEADLINE COLORS */
+li.overdue span { color: #ff4d4d; }   /* Red for overdue */
+li.near span { color: #ffa500; }      /* Orange for <24h remaining */
+
+/* ALIGN SPAN AND BUTTON */
+li span {
+  flex-grow: 1;
+  text-align: left;
+  margin-left: 10px;
+}
+li button.delete-task {
+  flex-shrink: 0;
+  margin-left: 10px;
+  width: auto;
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  margin: 30px 20px;
+  padding: 20px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+}
+footer h2 { font-family: 'Playfair Display', serif; margin: 0; letter-spacing: 3px; }
+footer p { margin: 5px 0; color: #ccc; font-size: 14px; }
+
+/* RESPONSIVE */
+@media screen and (max-width: 768px) {
+  .hero h1 { font-size: 50px; letter-spacing: 3px; }
+  .hero p { font-size: 14px; }
+  .glass { max-width: 90%; padding: 15px; }
+  input, button.add-task { width: 100%; margin: 5px 0; }
+  footer h2 { font-size: 20px; }
+  footer p { font-size: 12px; }
+}
+
+@media screen and (max-width: 480px) {
+  .hero h1 { font-size: 40px; }
+  .hero p { font-size: 12px; }
+  .glass { padding: 10px; }
+}
+</style>
+</head>
+
+<body>
+
+<header class="top-bar">
+  <nav>
+    <div>FROST</div>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="tasks.html">Tasks</a>
+      <a href="focus.html">Focus</a>
+      <a href="stats.html">Stats</a>
+      <a href="Aboutus.html">About Us</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+  </nav>
+</header>
+
+<div class="hero">
+  <h1>TASKS</h1>
+  <p>STUDY PRODUCTIVITY HUB</p>
+  <p>Manage your tasks efficiently</p>
+</div>
+
+<!-- Add Task Section -->
+<div class="glass">
+  <h3>Add a Task</h3>
+  <input id="taskInput" type="text" placeholder="Enter your task">
+  <input id="deadlineInput" type="date">
+  <button class="add-task" onclick="addTask()">Add Task</button>
+  <ul id="taskList"></ul>
+  <p>Completed Tasks: <span id="completedCount">0</span></p>
+</div>
+
+<!-- About & Contact Cards -->
+<div class="glass" onclick="location.href='Aboutus.html'">
+  <h3>About Us</h3>
+  <p>Learn why tracking productivity matters.</p>
+</div>
+
+<div class="glass" onclick="location.href='contact.html'">
+  <h3>Contact Us</h3>
+  <p>Have questions or feedback? Reach out to us!</p>
+</div>
+
+<footer>
+  <h2>FROST</h2>
+  <p>STUDY PRODUCTIVITY HUB</p>
+  <p>All rights reserved @2026</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

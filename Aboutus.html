@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Frost - About Us</title>
+
+<!-- Premium Font -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: url('https://images.unsplash.com/photo-1519681393784-d120267933ba') no-repeat center/cover;
+  color: white;
+}
+body::before {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(8px);
+  z-index: -1;
+}
+
+/* TOP BAR */
+.top-bar {
+  position: sticky;
+  top: 0;
+  padding-top: 10px;
+  z-index: 10;
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(12px);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 20px;
+  padding: 15px 30px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(15px);
+  border-radius: 14px;
+}
+
+nav a { color: #ccc; margin-left: 20px; text-decoration: none; transition: 0.3s; }
+nav a:visited { color: #ccc; }
+nav a:hover { color: white; }
+
+/* HERO */
+.hero {
+  text-align: center;
+  margin-top: 60px;
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 80px;
+  letter-spacing: 5px;
+  margin: 0;
+}
+.hero p { margin-top: 10px; color: #ccc; letter-spacing: 2px; }
+
+/* CONTENT */
+.content {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.glass {
+  background: rgba(255,255,255,0.05);
+  padding: 25px;
+  border-radius: 15px;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.content p {
+  color: #ccc;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  margin: 30px 20px;
+  padding: 20px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+}
+footer h2 { font-family: 'Playfair Display', serif; margin: 0; letter-spacing: 3px; }
+footer p { margin: 5px 0; color: #ccc; font-size: 14px; }
+
+/* RESPONSIVE */
+@media screen and (max-width: 768px) {
+  .hero h1 { font-size: 50px; letter-spacing: 3px; }
+  .hero p { font-size: 14px; }
+  .glass { padding: 20px; }
+  .content h2 { font-size: 24px; }
+  .content p { font-size: 14px; }
+}
+
+@media screen and (max-width: 480px) {
+  .hero h1 { font-size: 40px; }
+  .hero p { font-size: 12px; }
+  .glass { padding: 15px; }
+  .content h2 { font-size: 20px; }
+  .content p { font-size: 12px; }
+}
+</style>
+</head>
+
+<body>
+<header class="top-bar">
+  <nav>
+    <div>FROST</div>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="tasks.html">Tasks</a>
+      <a href="focus.html">Focus</a>
+      <a href="stats.html">Stats</a>
+      <a href="about.html">About Us</a>
+    </div>
+  </nav>
+</header>
+
+<div class="hero">
+  <h1>ABOUT US</h1>
+  <p>Why tracking productivity matters</p>
+</div>
+
+<div class="content">
+  <div class="glass">
+    <h2>Our Mission</h2>
+    <p>Frost exists to help students and professionals maximize their productivity by providing a simple, elegant, and focused way to manage tasks, monitor focus sessions, and track overall progress.</p>
+
+    <h2>Why a Productivity Tracker?</h2>
+    <p>Staying organized and tracking your work is crucial in today’s fast-paced world. Without a system, tasks can slip through the cracks, deadlines are missed, and motivation wanes. A productivity tracker helps you maintain focus, set realistic goals, and measure your performance over time.</p>
+
+    <h2>Benefits of Using Frost</h2>
+    <ul>
+      <li>Visualize your tasks and deadlines clearly.</li>
+      <li>Monitor focus sessions and see how much time you spend productively.</li>
+      <li>Identify areas of improvement and celebrate achievements.</li>
+      <li>Stay motivated with a clear productivity summary and stats.</li>
+    </ul>
+
+    <h2>Get Started</h2>
+    <p>By integrating Frost into your daily routine, you gain insights into your habits, track your productivity, and stay in control of your goals. Every completed task, every focused session, brings you closer to success.</p>
+  </div>
+</div>
+
+<footer>
+  <h2>FROST</h2>
+  <p>STUDY PRODUCTIVITY HUB</p>
+  <p>All rights reserved @2026</p>
+</footer>
+
+</body>
+</html>
