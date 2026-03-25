@@ -1,6 +1,3 @@
-// ==========================
-// Frost - Unified JS for all pages (Index, Tasks, Focus, Stats)
-// ==========================
 
 // --------------------------
 // INDEX.HTML VARIABLES
